@@ -9,5 +9,6 @@ postrouter.get('/getPostbycommunity',postController.getCommunityPost);
 postrouter.get('/getPostForHomeFeed',postController.getPostForHomeFeed);
 postrouter.get('/getUserPost',postController.fetchUserPost);
 postrouter.delete('/deletePost',authentication,postController.deletePost);
+postrouter.get('/getSinglePost',postController.getSinglePost);
 
 module.exports = postrouter;

@@ -60,3 +60,14 @@ exports.deletePost = function (req,res) {
     })
     
 }
+
+exports.getSinglePost = function(req,res){
+    postModel.getSinglePost(req.query,function(err,post){
+        if (err) {
+            res.send(err);
+            console.log(err);
+        } else {
+            res.json({error:false, message: "post Fetched successfully", data: post})
+        }
+    });
+}

@@ -69,6 +69,17 @@ post.deletePost = function(postid,result){
     })
 }
 
+post.getSinglePost = function(postid,result){
+    DBconnection.query("select * from posts where postid = ?",[postid.postid],function(err,res){
+        if (err) {
+            result(err,null);
+
+        }else{
+            result(null,res);
+        } 
+    })
+}
+
 post.getGeneralPostWithImages = function(arg,result){
     
 }

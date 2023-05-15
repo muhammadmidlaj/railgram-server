@@ -18,9 +18,9 @@ User.create = function (newUser, result) {
     console.log(typeof(newUser));
 
     dbConn.query("select username from userlogin where username=?", newUser.username, function (err, res) {
-        if (err) 
+        if (err) {
             throw err;
-        
+        }else{
         console.log(res);
 
         if (res.length > 0) {
@@ -66,7 +66,7 @@ User.create = function (newUser, result) {
 
         }
 
-
+    }
     });
 
 

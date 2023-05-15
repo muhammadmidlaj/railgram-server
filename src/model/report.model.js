@@ -3,7 +3,7 @@ const uuidv4 = require('uuid-v4');
 
 var report = function(report){
     this.reportid = uuidv4(),
-    this.userid = report.userid,
+    
     this.postid = report.postid,
     this.type = report.type,
     this.description = report.description
@@ -29,6 +29,17 @@ report.getReports = function(result){
         }
     });
 }
+
+report.getDataForAdmin = function(result){
+    DBconnection.query("call GET_DATA_FOR_ADMIN()",function(err,res){
+        if (err) {
+            result(err,null);
+        } else {
+            result(null,res);
+        }
+    });
+}
+
 
 
 module.exports = report;

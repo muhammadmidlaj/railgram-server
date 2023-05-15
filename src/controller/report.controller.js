@@ -24,3 +24,12 @@ exports.getReports = function(req,res){
         }
     });
 }
+exports.getDataForAdmin = function(req,res){
+    report.getDataForAdmin(function(err,counts){
+        if (err) {
+            res.status(400).send({error:true, message: 'error occured' , err: err});
+        } else {
+            res.json({error: false, message: 'reported fetched successfully', data:counts});
+        }
+    });
+}

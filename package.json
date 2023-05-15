@@ -2,10 +2,11 @@
   "name": "railgram_server",
   "version": "1.0.0",
   "description": "server for RailGram",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "localtunnel": "^2.0.2",
+    "moment": "^2.29.4",
     "mysql": "^2.18.1",
     "socket.io": "^4.6.1",
     "socket.io-client": "^4.6.1",
